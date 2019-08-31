@@ -22,7 +22,7 @@
   if($weight === "") {
     echo "体重が入力されていません", "<br/>";
     $err_flg += 1;
-  } elseif ($weight == 0) {
+  } elseif ($weight === "0") {
     echo "体重に0を入力することはできません", "<br/>";
     $err_flg += 1;
   }
@@ -30,23 +30,24 @@
   if($height === "") {
     echo "身長が入力されていません", "<br/>";
     $err_flg += 1;
-  } elseif ($height == 0) {
+  } elseif ($height === "0") {
     echo "身長に0を入力することはできません", "<br/>";
     $err_flg += 1;
   }
   ?>
 
-
-  <form action="ex05_03.php" method="POST">
+  <br/>
+  <form action="ex05_04.php" method="POST">
     氏名:<input type="text" name="name" value=<?= $name ?>><br/>
     体重:<input type="text" name="weight" value=<?= $weight ?>><br/>
     身長:<input type="text" name="height" value=<?= $height ?>><br/>
+    <input type="hidden" name="count", value="1">
     <br/>
     <input type="submit" name="btn" value="送信">
   </form>
 
   <?php 
-    if($err_flg === 0) {
+    if($err_flg === 0 && $_POST["count"] === "1") {
       $bmi_height = $height / 100.0;
       $bmi = $weight / $bmi_height / $bmi_height;
       $bmi_result = "";
