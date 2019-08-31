@@ -5,36 +5,14 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Cache-Control" content="no-store">
   <meta http-equiv="Expires" content = "0">
-  <title>ex05_03.php</title>
+  <title>ex05_04.php</title>
 </head>
 <body>
   <?php
   $name = $_POST["name"];
   $weight = $_POST["weight"];
   $height = $_POST["height"];
-  $bmi_height = $height / 100.0;
-  $bmi = $weight / $bmi_height / $bmi_height;
   $err_flg = 0;
-  $bmi_result = "";
-
-  switch ($bmi) {
-    case $bmi < 18.5:
-      $bmi_result = "やせ";
-      break;
-    case $bmi >= 18.5 && $bmi < 25:
-      $bmi_result = "標準";
-      break;
-    case $bmi >= 25 && $bmi < 30:
-      $bmi_result = "肥満";
-      break;
-    case $bmi >= 30:
-      $bmi_result = "高度肥満";
-      break;
-    default:
-      $bmi_result = "測定不能";
-      break;
-  }
-
 
   if($name === "") {
     echo "氏名が入力されていません", "<br/>";
@@ -69,6 +47,28 @@
 
   <?php 
     if($err_flg === 0) {
+      $bmi_height = $height / 100.0;
+      $bmi = $weight / $bmi_height / $bmi_height;
+      $bmi_result = "";
+  
+    switch ($bmi) {
+      case $bmi < 18.5:
+        $bmi_result = "やせ";
+        break;
+      case $bmi >= 18.5 && $bmi < 25:
+        $bmi_result = "標準";
+        break;
+      case $bmi >= 25 && $bmi < 30:
+        $bmi_result = "肥満";
+        break;
+      case $bmi >= 30:
+        $bmi_result = "高度肥満";
+        break;
+      default:
+        $bmi_result = "測定不能";
+        break;
+    }
+
       echo $_POST["name"], "さんのBMIは、", $bmi, "で、", "「", $bmi_result, "」です";
     }
   ?>
