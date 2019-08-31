@@ -45,11 +45,11 @@
   <input type="text" name="number1" value="<?php echo $num1 ?>">
   <input type="text" name="number2" value="<?php echo $num2 ?>"><br/>
   <input type="hidden" name="count" value="1">
-  <input type="submit" name="btn" value="+">
-  <input type="submit" name="btn" value="-">
-  <input type="submit" name="btn" value="*">
-  <input type="submit" name="btn" value="*">
-  <input type="submit" name="btn" value="%">
+  <input type="submit" name="enzansi" value="+">
+  <input type="submit" name="enzansi" value="-">
+  <input type="submit" name="enzansi" value="*">
+  <input type="submit" name="enzansi" value="/">
+  <input type="submit" name="enzansi" value="%">
     <?php if($errflg === 0) {
       echo "=", $sum;
     } ?><br/>
