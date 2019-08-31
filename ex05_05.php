@@ -18,42 +18,52 @@
     if(is_numeric($num1) == FALSE || is_numeric($num2) == FALSE){
       $errflg += 1;
     } else {
-      switch ($enzan) {
-        case '+':
-          $sum = $num1 + $num2;
-          break;
-        case '-':
-          $sum = $num1 - $num2;
-          break;
-        case '*':
-          $sum = $num1 * $num2;
-          break;
-        case '/':
-          $sum = $num1 / $num2;
-          break;
-        case '%':
-          $sum = $num1 % $num2;
-          break;
-        default:
-          $errflg += 1;
-          break;
+        switch ($enzan) {
+          case '+':
+            $sum = $num1 + $num2;
+            break;
+          case '-':
+            $sum = $num1 - $num2;
+            break;
+          case '*':
+            $sum = $num1 * $num2;
+            break;
+          case '/':
+            if($num2 !== "0") {
+              $sum = $num1 / $num2;
+            } else {
+              echo "0で割ることはできません";
+              $errflg +=1;
+            }
+            break;
+          case '%':
+            if($num2 !== "0") {
+              $sum = $num1 % $num2;
+            } else {
+              echo "0で余りを出すことはできません";
+              $errflg +=1;
+            }
+            break;
+          default:
+            $errflg += 1;
+            break;
       }
     }
   ?>
 
-<form action="<?= $_SERVER["SCRIPT_NAME"]?>" method="POST">
-  <input type="text" name="number1" value="<?php echo $num1 ?>">
-  <input type="text" name="number2" value="<?php echo $num2 ?>"><br/>
-  <input type="hidden" name="count" value="1">
-  <input type="submit" name="enzansi" value="+">
-  <input type="submit" name="enzansi" value="-">
-  <input type="submit" name="enzansi" value="*">
-  <input type="submit" name="enzansi" value="/">
-  <input type="submit" name="enzansi" value="%">
-    <?php if($errflg === 0) {
-      echo "=", $sum;
-    } ?><br/>
-</form>
+  <form action="<?= $_SERVER["SCRIPT_NAME"]?>" method="POST">
+    <input type="text" name="number1" value="<?php echo $num1 ?>">
+    <input type="text" name="number2" value="<?php echo $num2 ?>"><br/>
+    <input type="hidden" name="count" value="1">
+    <input type="submit" name="enzansi" value="+">
+    <input type="submit" name="enzansi" value="-">
+    <input type="submit" name="enzansi" value="*">
+    <input type="submit" name="enzansi" value="/">
+    <input type="submit" name="enzansi" value="%">
+      <?php if($errflg === 0) {
+        echo "=", $sum;
+      } ?><br/>
+  </form>
 
   <?php
     if($errflg !== 0 && $_POST["count"] === "1") {
