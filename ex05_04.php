@@ -25,6 +25,9 @@
   } elseif ($weight === "0") {
     echo "体重に0を入力することはできません", "<br/>";
     $err_flg += 1;
+  } elseif (is_numeric($weight) == FALSE && $_POST["count"] === "1") {
+    echo "体重に数字以外を入力することはできません", "<br/>";
+    $err_flg += 1;
   }
 
   if($height === "") {
@@ -32,6 +35,9 @@
     $err_flg += 1;
   } elseif ($height === "0") {
     echo "身長に0を入力することはできません", "<br/>";
+    $err_flg += 1;
+  } elseif (is_numeric($height) == FALSE && $_POST["count"] === "1") {
+    echo "身長に数字以外を入力することはできません", "<br/>";
     $err_flg += 1;
   }
   ?>
