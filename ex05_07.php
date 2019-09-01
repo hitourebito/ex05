@@ -9,9 +9,27 @@
 </head>
 <body>
   <?php //phpここから
+  $errflg = 0;
 
-   //phpここまで
-   ?>
+  if ($_POST["count"] === "1") {
+    $name = $_POST["name"];
+    $transportation = $_POST["transportation"];
+
+    if ($name === "") {
+      echo "氏名を入力してください", "<br/>";
+      $errflg += 1;
+    }
+
+    if (isset($transportation) == FALSE) {
+      echo "交通手段を選択してください", "<br/>";
+      $errflg += 1;
+    }
+
+    if ($errflg !== 0) {
+      echo "<br/>";
+    }
+  }
+   //phpここまで ?>
 
   <form action="<?= $_SERVER["SCRIPT_NAME"]?>" method="POST">
     <div>科目:</div>
