@@ -9,11 +9,20 @@
 </head>
 <body>
   <form action="<?= $_SERVER["SCRIPT_NAME"]?>" method="POST">
-    <select name="station">
+    発駅:<select name="station">
       <option value="">発駅を選択</option>
       <option value="">和泉中央駅</option>
       <option value="">テクノステージセンター前</option>
     </select>
+    時間帯:<select name="time[]" size="4" multiple="multiple">
+      <option value="">16時台</option>
+      <option value="">17時台</option>
+      <option value="">18時台</option>
+      <option value="">19時台</option>
+    </select>
+
+    <?= "<br/>" ?>
+    <input type="submit" name="btn" value="送信">
   </form>
   <?php //php1ここから
   //php1ここまで?>
