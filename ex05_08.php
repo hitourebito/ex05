@@ -8,6 +8,8 @@
   <title>ex05_08.php</title>
 </head>
 <body>
+  <form action="<?= $_SERVER["SCRIPT_NAME"]?>" method="POST">
+  </form>
   <?php //php1ここから
   //php1ここまで?>
 </body>
