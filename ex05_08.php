@@ -9,6 +9,11 @@
 </head>
 <body>
   <form action="<?= $_SERVER["SCRIPT_NAME"]?>" method="POST">
+    <select name="station">
+      <option value="">発駅を選択</option>
+      <option value="">和泉中央駅</option>
+      <option value="">テクノステージセンター前</option>
+    </select>
   </form>
   <?php //php1ここから
   //php1ここまで?>
