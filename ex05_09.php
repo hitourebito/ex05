@@ -1,10 +1,11 @@
 <?php //php1ここから
   $station_tbl = array("中百舌鳥", "深井", "泉ヶ丘", "栂・美木多", "光明池", "和泉中央");
   $errmsg = array();
+  $station = array();
   $station_judge = array_fill(0, 6, 0);
   $pflg = 0;
   $errflg = 0;
-
+  $fee_tbl = array(0 => array());
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pflg = 1;
@@ -17,6 +18,7 @@
     if (isset($_POST["station"]) && count($_POST["station"])) {
       foreach ($_POST["station"] as $value) {
         $station_judge[$value] = 1;
+        $station = $_POST["station"];
       }
     }
 
@@ -57,6 +59,8 @@
     <input type="submit" name="btn" value="送信">
   </form>
 <?php //php3ここから
-    } else { }
+    } else { 
+      echo $station[1][0];
+    }
 // php3ここまで ?>
 </body>
