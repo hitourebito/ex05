@@ -1,6 +1,17 @@
 <?php //php1ここから
   $station_tbl = array("中百舌鳥", "深井", "泉ヶ丘", "栂・美木多", "光明池", "和泉中央");
   $station_judge = array_fill(0, 6, 0);
+  $pflg = 0;
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $pflg = 1;
+
+    if (isset($_POST["station"]) && count($_POST["station"])) {
+      foreach ($_POST["station"] as $value) {
+        $station_judge[$value] = 1;
+      }
+    }
+  }
 //php1ここまで ?>
 
 <!DOCTYPE html>
