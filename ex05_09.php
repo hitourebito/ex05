@@ -1,5 +1,6 @@
 <?php //php1ここから
   $station_tbl = array("中百舌鳥", "深井", "泉ヶ丘", "栂・美木多", "光明池", "和泉中央");
+  $number = 1;
   $errmsg = array();
   $station = array();
   $station_judge = array_fill(0, 6, 0);
