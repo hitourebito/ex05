@@ -103,8 +103,18 @@
         
         if ($array_count >= 4) {
           for ($i=0; $i < 4; $i++) { 
-            echo "<tr><td>", $i + 16, "</td></tr>";
-            
+            echo "<tr><td>", $i + 16, "</td><td>";
+            if ($station === "1") {
+              for ($j=0; $j < 4; $j++) { 
+                echo $izumityuou[$i][$j], " ";
+              }
+              echo "</td></tr>";
+            } else {
+              for ($j=0; $j < 4; $j++) { 
+                echo $tecnostage[$i][$j], " ";
+              }
+              echo "</td></tr>";
+            }
           }
         }
 
