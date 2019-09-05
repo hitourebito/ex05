@@ -1,12 +1,16 @@
 <?php //php1ここから
   $station_tbl = array("中百舌鳥", "深井", "泉ヶ丘", "栂・美木多", "光明池", "和泉中央");
-  $number = 1;
   $errmsg = array();
   $station = array();
   $station_judge = array_fill(0, 6, 0);
   $pflg = 0;
   $errflg = 0;
-  $fee_tbl = array(0 => array());
+  $fee_tbl = array(0 => array(1 => 180, 2 => 220, 3 => 260, 4 => 280, 5, 320),
+                    1 => array(2 => 200, 3 => 220, 4 => 240, 5 => 280),
+                    2 => array(3 => 180, 4 => 200, 5 => 240),
+                    3 => array(4 => 160, 5 => 220),
+                    4 => array(5 => 200)
+                  );
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pflg = 1;
