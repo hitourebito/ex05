@@ -65,7 +65,10 @@
   </form>
 <?php //php3ここから
     } else { 
-      echo $station[1][0];
+      for ($i=0; $i < count($station) - 1; $i++) { 
+        echo $station_tbl[$station[$i]], "→", $station_tbl[$station[$i + 1]], "までは";
+        echo $fee_tbl[$station[$i]][$station[$i + 1]], "円です", "<br/>";
+      }
     }
 // php3ここまで ?>
 </body>
