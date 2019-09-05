@@ -1,3 +1,8 @@
+<?php //php1ここから
+
+
+//php1ここまで ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -5,10 +10,15 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Cache-Control" content="no-store">
   <meta http-equiv="Expires" content = "0">
-  <title>ex05_08.php</title>
+  <title>ex05_09.php</title>
 </head>
 <body>
-<?php //php1ここから
+  <form action="<?= $_SERVER["SCRIPT_NAME"]?>" method="POST">
 
-  //php1ここまで?>
+  </form>
+<?php //php2ここから
+
+
+
+  //php2ここまで?>
 </body>
