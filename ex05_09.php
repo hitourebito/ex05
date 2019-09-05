@@ -23,6 +23,12 @@
   }
 //php1ここまで ?>
 
+<?php 
+  if (!$pflg || count($errmsg)) { 
+    foreach ($errmsg as $value) {
+      echo "${value}", "<br/><br/>";
+    }
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -34,6 +40,7 @@
 </head>
 <body>
   <form action="<?= $_SERVER["SCRIPT_NAME"]?>" method="POST">
+    <div>運賃を知りたい駅間を選んでください</div>
     <select name="station[]" size="6" multiple="multiple">
     <?php //php2ここから
       foreach ($station_tbl as $key => $value) {
@@ -49,9 +56,7 @@
     <br/>
     <input type="submit" name="btn" value="送信">
   </form>
-<?php //php2ここから
-
-
-
-  //php2ここまで?>
+<?php //php3ここから
+    } else { }
+// php3ここまで ?>
 </body>
