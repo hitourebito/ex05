@@ -26,9 +26,15 @@
 <body>
   <form action="<?= $_SERVER["SCRIPT_NAME"]?>" method="POST">
     <select name="station[]" size="6" multiple="multiple">
-    <?php//php2ここから
-      
-    //php2ここまで?>
+    <?php //php2ここから
+      foreach ($station_tbl as $key => $value) {
+        echo "<option value=", "$key";
+        if ($station_judge[$key]) {
+          echo " selected";
+        }
+        echo ">$value</option>";
+      }
+    //php2ここまで ?>
 
     </select>
   </form>
